@@ -1,0 +1,75 @@
+* {
+    font-family: Playfair Display;
+    margin: 0;
+    padding: 0;
+}
+
+.special-container {
+    padding-top: 15%;
+}
+
+.login-p-l-top {
+    margin-right: 10px !important;
+}
+
+.login-p-left {
+    height: 100vh;
+}
+
+.login-p-l-t-title-span {
+    color: #AAA713;
+}
+
+.login-p-l-c-text {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.login-p-right {
+    height: 100vh;
+}
+
+.login-p-r-img {
+    height: 100vh;
+    width: 100%;
+}
+
+.login-p-l-c-input {
+    border: #032D23 2px solid;
+    border-radius: 6px;
+    width: 385px;
+    height: 60px;
+    padding-left: 20px;
+}
+
+.eye-icon {
+    position: relative;
+    margin-left: -15%;
+    margin-top: 15px;
+}
+
+.checkbox-input {
+    cursor: pointer;
+}
+
+.forgot-p-nav {
+    color: #032D23;
+}
+
+.div {
+    gap: 150px;
+}
+
+.login-p-button {
+    color: #fff;
+    background-color: #032D23;
+    width: 385px;
+    height: 64px;
+    border-radius: 6px;
+}
+.get-started-nav{
+    color: #AAA713;
+}
+.get-started{
+    color: #032D23;
+}

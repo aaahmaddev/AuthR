@@ -1,0 +1,49 @@
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 30px;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.home-button-l {
+    width: 170px;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+    background-color: #032D23;
+}
+
+.home-button-l:hover{
+    background-color: #fff;
+    transition: 0.3s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.login-nav{
+    color: #fff;
+}
+.login-nav:hover{
+    color: #032D23 !important;
+}
+
+.home-button-r {
+    width: 170px;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+    background-color: #032D23;
+}
+
+.home-button-r:hover{
+    background-color: #fff;
+    transition: 0.3s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sign-up-nav{
+    color: #fff;
+}
+.sign-up-nav:hover{
+    color: #032D23 !important;
+}
