@@ -1,0 +1,8 @@
+.login-p-l-top{
+    width: 100%;
+    text-align: center;
+}
+.signup-checkbox{
+    cursor: pointer;
+    user-select: none;
+}

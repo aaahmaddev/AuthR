@@ -15,8 +15,8 @@ const index = () => {
                         <div className="special-container d-flex align-items-center justify-content-center flex-wrap">
 
 
-                            <div className="login-p-l-top mb-5">
-                                <h1 className='login-p-l-t-title fw-bolder'>
+                            <div className="login-p-l-top mb-4 mt-0">
+                                <h1 className='login-p-l-t-title fw-bolder mt-0'>
                                     Welcom back to <span className='login-p-l-t-title-span'>OrgaFarm</span>
                                 </h1>
                             </div>
@@ -24,7 +24,7 @@ const index = () => {
 
 
                             <div className="login-p-l-center">
-                                <h2 className="login-p-l-c-text">SignUp</h2>
+                                <h2 className="login-p-l-c-text mb-3">SignUp</h2>
                                 <form action="#">
                                     <input className='login-p-l-c-input' type="text" placeholder='Email' />
                                     <label className='d-flex align-items-center' htmlFor="password">
@@ -38,9 +38,11 @@ const index = () => {
                                     </label>
 
                                     <div className='div d-flex align-items-center mt-3 mb-3'>
-                                        <label className='d-flex gap-2' htmlFor="#">
-                                            <input className='checkbox-input' type="checkbox" />
-                                            Remember Me
+
+
+                                        <label className='signup-checkbox'>
+                                            <input className='me-2' type="checkbox" name="remember"/>
+                                                Remember Me
                                         </label>
 
 
