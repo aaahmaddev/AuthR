@@ -10,9 +10,9 @@ const index = () => {
                     <h1>Uh Ohh!</h1>
                     <p>We couldn't find the page that you're looking for :(</p>
                     <div class="cta">
-                        <button class="button1">
-                            <NavLink className="text-white text-decoration-none" to="/">Go Back</NavLink>
-                        </button>
+                        <NavLink class="text-white text-decoration-none" to="/">
+                            <button className="button1">Go Back</button>
+                        </NavLink>
                     </div>
                 </div>
                 <img src="https://github.com/smthari/404-page-using-html-css/blob/Starter/Images/404.png?raw=true" alt="home image" class="hero-img" />

@@ -34,8 +34,8 @@ const index = () => {
                                     <div className='div d-flex align-items-center mt-3 mb-3'>
 
                                         <label className='signup-checkbox'>
-                                            <input className='me-2' type="checkbox" name="remember" />
-                                            Remember Me
+                                            <input className='me-2' type="checkbox" name="remember"/>
+                                                Remember Me
                                         </label>
 
                                         <NavLink className="forgot-p-nav text-decoration-none" to="/forgotpass">Forgot Password?</NavLink>
