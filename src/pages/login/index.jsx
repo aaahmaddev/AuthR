@@ -1,9 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './index.css'
 import { NavLink } from 'react-router-dom';
-import LoginPageImg from '../../../images/LoginPageImg/Image.png'
-import EyeIcon from '../../../images/LoginPageImg/eye.png'
+import LoginPageImg from '../../assets/images/LoginPageImg/Image.png'
 const index = () => {
+
+const loginUrl = 'http://127.0.0.1:5000/api/login';
+const [email, setEmail] = useState();
+const [password, setPassword] = useState();
+
+const changeEmail = (e) => {
+    const email = e.target.value;
+    const pElement = document.getElementById('email-err');
+    const passwordElement = document.getElementById(password);
+
+if (email.length < 5){
+    pElement.textContent = 'minimum 5 ta';
+    pElement.style.display = 'block';
+    passwordElement.readOnly = true;
+} else {
+    pElement.style.display = 'none';
+    passwordElement.readOnly = false;
+}
+setEmail(email)
+}
+
+const changePassword = (e) => {
+    const password = e.target.value;
+    setPassword(password)
+}
+
+const loginFunction = (e) => {
+    e.prevenDefault();
+
+    axios.post(loginUrl, {
+        email: email,
+        password: password
+    })
+
+    .then(function (response){
+        if (response.status == 200) {
+            localStorage.setItem('token' ,response.data.accessToken)
+            alert('successfuly logged in')
+        }
+    })
+
+.catch(function (error) {
+    console.log ('error: ${error}')
+})
+
+.finally(function () {
+
+})
+
+}
+
     return (
         <>
 
@@ -24,18 +75,20 @@ const index = () => {
 
                             <div className="login-p-l-center">
                                 <h2 className="login-p-l-c-text mb-4">Login</h2>
-                                <form action="#">
-                                    <input className='login-p-l-c-input' type="text" placeholder='Email' />
+                                <form onSubmit={(e) => loginFunction(e)}>
+                                    <label htmlFor="email">
+                                        <input onChange={(e) => changeEmail(e)} name='email' id='email' className='login-p-l-c-input' type="email" placeholder='Email' required/>
+                                    </label>
+                                    <p id='email-err'></p>
                                     <label className='d-flex align-items-center' htmlFor="password">
-                                        <input className='login-p-l-c-input mt-3' type="password" placeholder='Password' />
-                                        <img className='eye-icon' src={EyeIcon} alt="" />
+                                        <input onChange={(e) => changePassword(e)} className='login-p-l-c-input mt-3' type="password" placeholder='Password' />
                                     </label>
 
                                     <div className='div d-flex align-items-center mt-3 mb-3'>
 
                                         <label className='signup-checkbox'>
-                                            <input className='me-2' type="checkbox" name="remember"/>
-                                                Remember Me
+                                            <input className='me-2' type="checkbox" name="remember" />
+                                            Remember Me
                                         </label>
 
                                         <NavLink className="forgot-p-nav text-decoration-none" to="/forgotpass">Forgot Password?</NavLink>

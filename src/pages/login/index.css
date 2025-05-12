@@ -83,3 +83,8 @@
 .get-started{
     color: #032D23;
 }
+#email-err{
+    display: none;
+    color: red;
+    margin: 0;
+}

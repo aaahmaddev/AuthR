@@ -1,8 +1,8 @@
 import React from 'react';
 import './index.css'
 import { NavLink } from 'react-router-dom';
-import LoginPageImg from '../../../images/LoginPageImg/Image.png'
-import EyeIcon from '../../../images/LoginPageImg/eye.png'
+import LoginPageImg from '../../assets/images/LoginPageImg/Image.png'
+
 
 const index = () => {
     return (
@@ -29,23 +29,15 @@ const index = () => {
                                     <input className='login-p-l-c-input' type="text" placeholder='Email' />
                                     <label className='d-flex align-items-center' htmlFor="password">
                                         <input className='login-p-l-c-input mt-3' type="password" placeholder='Password' />
-                                        <img className='eye-icon' src={EyeIcon} alt="" />
+
                                     </label>
 
                                     <label className='d-flex align-items-center' htmlFor="confirm-password">
                                         <input className='login-p-l-c-input mt-3' type="password" placeholder='Confirm Password' />
-                                        <img className='eye-icon' src={EyeIcon} alt="" />
+
                                     </label>
 
                                     <div className='div d-flex align-items-center mt-3 mb-3'>
-
-
-                                        <label className='signup-checkbox'>
-                                            <input className='me-2' type="checkbox" name="remember"/>
-                                                Remember Me
-                                        </label>
-
-
                                     </div>
 
                                     <button className='login-p-button fw-bold' type='submit'>SignUp</button>

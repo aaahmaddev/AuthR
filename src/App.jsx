@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './assets/pages/home'
-import LoginPage from './assets/pages/login'
-import SignUpPage from './assets/pages/signup'
-import NotFound from './assets/pages/404'
-import ForgotPass from './assets/pages/forgotpass'
+import Home from '../src/pages/home/'
+import LoginPage from '../src/pages/login/'
+import SignUpPage from '../src/pages/signup/'
+import NotFound from '../src/pages/404/'
+import ForgotPass from '../src/pages/forgotpass/'
 import './App.css'
 
 function App() {
