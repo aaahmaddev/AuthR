@@ -1,59 +1,66 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import './index.css'
 import { NavLink } from 'react-router-dom';
 import LoginPageImg from '../../assets/images/LoginPageImg/Image.png'
-const index = () => {
+const App = () => {
 
-const loginUrl = 'http://127.0.0.1:5000/api/login';
-const [email, setEmail] = useState();
-const [password, setPassword] = useState();
+    const loginUrl = 'http://127.0.0.1:5000/api/login'
 
-const changeEmail = (e) => {
-    const email = e.target.value;
-    const pElement = document.getElementById('email-err');
-    const passwordElement = document.getElementById(password);
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
-if (email.length < 5){
-    pElement.textContent = 'minimum 5 ta';
-    pElement.style.display = 'block';
-    passwordElement.readOnly = true;
-} else {
-    pElement.style.display = 'none';
-    passwordElement.readOnly = false;
-}
-setEmail(email)
-}
+    const changeEmail = (e) => {
+        const email = e.target.value;
+        const pElement = document.getElementById('email-err');
+        const passwordElement = document.getElementById('password');
 
-const changePassword = (e) => {
-    const password = e.target.value;
-    setPassword(password)
-}
-
-const loginFunction = (e) => {
-    e.prevenDefault();
-
-    axios.post(loginUrl, {
-        email: email,
-        password: password
-    })
-
-    .then(function (response){
-        if (response.status == 200) {
-            localStorage.setItem('token' ,response.data.accessToken)
-            alert('successfuly logged in')
+        if (email.length < 5) {
+            pElement.textContent = 'minimum 5 ta symbol';
+            pElement.style.display = 'block';
+            passwordElement.ariaReadOnly = true
+        } else {
+            pElement.style.display = 'none';
+            passwordElement.ariaReadOnly = false;
         }
-    })
+        setEmail(email)
+    }
 
-.catch(function (error) {
-    console.log ('error: ${error}')
-})
+    const changePassword = (e) => {
+        const password = e.target.value;
+        setPassword(password)
+    }
 
-.finally(function () {
+    // const eyeFunction = () => {
+    //     const passwordElement = document.getElementById('password');
+    //     if (passwordElement.type == 'password'){
+    //         passwordElement.type = 'text'
+    //     }
+    //     else{
+    //         passwordElement.type = 'password';
+    //     }
+    // }
 
-})
+    const loginFunction = (e) => {
+        e.preventDefault();
 
-}
+        axios.post(loginUrl, {
+            email: email,
+            password: password
+        })
+            .then(function (response) {
+                if (response.status == 200) {
+                    localStorage.setItem('token', response.data.accessToken)
+                    alert('successfully logged in')
+                }
+            })
+            .catch(function (error) {
+                console.log(`error: ${error}`);
+            })
+            .finally(function () {
+
+            })
+    }
 
     return (
         <>
@@ -77,11 +84,12 @@ const loginFunction = (e) => {
                                 <h2 className="login-p-l-c-text mb-4">Login</h2>
                                 <form onSubmit={(e) => loginFunction(e)}>
                                     <label htmlFor="email">
-                                        <input onChange={(e) => changeEmail(e)} name='email' id='email' className='login-p-l-c-input' type="email" placeholder='Email' required/>
+                                        <input onChange={(e) => changeEmail(e)} name='email' id='email' className='login-p-l-c-input' type="email" placeholder='Email' required />
                                     </label>
                                     <p id='email-err'></p>
                                     <label className='d-flex align-items-center' htmlFor="password">
-                                        <input onChange={(e) => changePassword(e)} className='login-p-l-c-input mt-3' type="password" placeholder='Password' />
+                                        <input onChange={(e) => changePassword(e)} name='password' id='password' className='login-p-l-c-input mt-3' type="password" placeholder='Password' required />
+
                                     </label>
 
                                     <div className='div d-flex align-items-center mt-3 mb-3'>
@@ -95,6 +103,8 @@ const loginFunction = (e) => {
                                     </div>
 
                                     <button className='login-p-button fw-bold' type='submit'>Login</button>
+
+
 
                                     <p className='get-started mt-3 mb-0'>Don't have an account? <NavLink className="get-started-nav text-decoration-none" to="/signup">Get Started</NavLink></p>
 
@@ -112,4 +122,4 @@ const loginFunction = (e) => {
     );
 };
 
-export default index;
+export default App;

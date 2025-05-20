@@ -1,10 +1,35 @@
-import React from 'react';
-import './index.css'
+// import React, { useState } from 'react';import './index.css'
 import { NavLink } from 'react-router-dom';
 import LoginPageImg from '../../assets/images/LoginPageImg/Image.png'
+// import axios from 'axios';
 
 
-const index = () => {
+const App = () => {
+    // const regUrl = 'http://127.0.0.1:5000/api/registration'
+
+    // const [email] = useState();
+    // const [password] = useState();
+    // const registerFunction = () => {
+
+    //             axios.post(regUrl, {
+    //         email: email,
+    //         password: password
+    //     })
+    //         .then(function (response) {
+    //             if (response.status == 200) {
+    //                 localStorage.setItem('token', response.data.accessToken)
+    //                 alert('successfully registered')
+    //             }
+    //         })
+    //         .catch(function (error) {
+    //             console.log(`error: ${error}`);
+    //         })
+    //         .finally(function () {
+
+    //         })
+        
+    // }
+
     return (
         <>
 
@@ -58,4 +83,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default App;

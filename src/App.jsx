@@ -4,6 +4,7 @@ import LoginPage from '../src/pages/login/'
 import SignUpPage from '../src/pages/signup/'
 import NotFound from '../src/pages/404/'
 import ForgotPass from '../src/pages/forgotpass/'
+import Users from '../src/pages/users/'
 import './App.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path='/signup' element={<SignUpPage/>} />
       <Route path ='*' element={<NotFound/>} />
       <Route path='forgotpass' element={<ForgotPass/>} />
+      <Route path='users' element={<Users/>}/>
     </Routes>
   )
 }
